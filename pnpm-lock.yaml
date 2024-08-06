@@ -38,6 +38,9 @@ importers:
       '@angular/ssr':
         specifier: ^18.1.3
         version: 18.1.3(@angular/common@18.1.3(@angular/core@18.1.3(rxjs@7.8.1)(zone.js@0.14.10))(rxjs@7.8.1))(@angular/core@18.1.3(rxjs@7.8.1)(zone.js@0.14.10))
+      '@fontsource/poppins':
+        specifier: ^5.0.14
+        version: 5.0.14
       express:
         specifier: ^4.18.2
         version: 4.19.2
@@ -1022,6 +1025,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/poppins@5.0.14':
+    resolution: {integrity: sha512-nmM1zpPo3Uh4JcGAVSQuWaZNYh2FbbwWhZ5t6hRaynmJaNTBW85d3nEh9zMmzI0HX7X5xqQVdRHeDatKpOGsnA==}
 
   '@inquirer/checkbox@2.4.7':
     resolution: {integrity: sha512-5YwCySyV1UEgqzz34gNsC38eKxRBtlRDpJLlKcRtTjlYA/yDKuc1rfw+hjw+2WJxbAZtaDPsRl5Zk7J14SBoBw==}
@@ -5444,6 +5450,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource/poppins@5.0.14': {}
 
   '@inquirer/checkbox@2.4.7':
     dependencies:
