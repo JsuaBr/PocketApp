@@ -12,4 +12,8 @@ import { NotesHeadingComponent } from '../common/notes-heading/notes-heading.com
 })
 export class NotesListComponent {
 
+prueba(){
+  alert('Funciona!!')
+}
+
 }
