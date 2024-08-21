@@ -10,6 +10,7 @@ class Server{
         this.app = express();
         this.port = process.env.PORT || '3001';
         this.listen();
+        this.middlewares();
         this.routes();
     }
 
@@ -22,11 +23,16 @@ class Server{
     routes(){
         this.app.get('/', (req:Request, res:Response) =>{
             res.json({
-                msg : 'Hola'
+                msg : 'Página de registro funciona!!'
             })
         });
 
         this.app.use('/notes', notesRoutes);
+    }
+
+    middlewares(){
+        // Parse the body
+        this.app.use(express.json());
     }
 }
 
