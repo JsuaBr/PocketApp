@@ -4,7 +4,7 @@ import { NotesGridComponent } from "./notes-grid/notes-grid.component";
 import { NotesCreateComponent } from "./notes-create/notes-create.component";
 
 export const NOTES_ROUTES: Routes = [
-    {path: 'notes', component: NotesListComponent},
+    {path: '', component: NotesListComponent},
     {path: 'calendar', component: NotesGridComponent},
     {path: 'create', component: NotesCreateComponent}
 ];
