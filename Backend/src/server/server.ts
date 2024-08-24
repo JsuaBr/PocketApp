@@ -1,7 +1,8 @@
 import { Sequelize } from "sequelize";
+import 'dotenv/config';
 
-const sequelize = new Sequelize('pocketapp', 'root', '1234', {
-    host: 'localhost',
+const sequelize = new Sequelize(process.env.DB_NAME as string, process.env.DB_USER as string, process.env.DB_PASSWORD as string, {
+    host: process.env.HOST as string,
     dialect: 'mysql'
 });
 
