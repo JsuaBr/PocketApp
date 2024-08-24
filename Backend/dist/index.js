@@ -6,9 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const notes_routes_1 = __importDefault(require("./routes/notes.routes"));
 require("dotenv/config");
+const server_1 = require("./server/server");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 const port = process.env.PORT;
+server_1.connection;
 app.get('/', (req, res) => {
     res.json({
         msg: `Funcionando desde puerto ${port}`

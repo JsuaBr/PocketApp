@@ -5,9 +5,13 @@ const sequelize = new Sequelize('pocketapp', 'root', '1234', {
     dialect: 'mysql'
 });
 
-try {
-    await sequelize.authenticate();
-    console.log('uccessful connection')
-} catch (error) {
-    console.error('Unable to connect to database: ', error);
+export async function connection(){
+    try {
+        await sequelize.authenticate();
+        console.log('Successful connection')
+    } catch (error) {
+        console.error('Unable to connect to database: ', error);
+    }
 }
+
+connection();
