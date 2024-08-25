@@ -7,7 +7,7 @@
 
             <!-- Note Element -->
             @for (note of notesList; track note.id) {
-                <button (click)="prueba()" class="w-full h-fit flex flex-col mt-4 hover:border-primary">
+                <button (click)="prueba()" class="w-full h-fit flex flex-col mt-4 hover:border-primary items-start">
                     <h2 class="text-lg font-semibold italic md:text-2xl">{{note.date}}</h2>
                     <div class="w-full h-fit flex flex-row justify-between items-center">
                         <p class="text-md font-normal md:text-xl">{{note.title}}</p>
