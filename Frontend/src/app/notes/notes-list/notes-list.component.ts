@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 // Option Bar
 import { OptionbarComponent } from '../../shared/components/optionbar/optionbar.component';
 import { NotesHeadingComponent } from '../common/notes-heading/notes-heading.component';
+import { NotesService } from '../../core/services/notes-service/notes.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-notes-list',
@@ -12,13 +15,12 @@ import { NotesHeadingComponent } from '../common/notes-heading/notes-heading.com
 })
 export class NotesListComponent {
 
-notesList = [
-  {id: '1', date: 'Today', title: 'School Assignment', description: 'I have to do my History Homework for tomorrow'},
-  {id: '2', date: 'Yesterday', title: 'Spanish Course', description: 'I have to Assist to My Spanish Course'},
-]
+notesList = NotesService.notas;
 
-prueba(){
-  alert('Funciona!!')
+constructor(private router:Router){}
+
+irADetalles(id:any):void{
+  this.router.navigate([`notes/details`, id]);
 }
 
 }

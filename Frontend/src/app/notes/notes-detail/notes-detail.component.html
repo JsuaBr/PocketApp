@@ -1,0 +1,52 @@
+<div class="w-full h-full flex flex-col justify-between lg:flex-row-reverse lg:items-center lg:justify-normal">
+    <div class="w-full h-[85%] flex flex-col md:items-stretch p-6 pb-2">
+        
+       <div class="w-full h-full bg-zinc-300 rounded-2xl shadow-md flex flex-col overflow-x-auto justify-between">
+            <div>
+                <div class="w-full h-fit flex justify-center items-center p-8 pb-2">
+                    <h1 class="font-black text-2xl uppercase md:text-5xl">{{this.nota.nombre}}</h1>
+                </div>
+                <div class="w-full h-fit flex items-center px-8 my-2">
+                    <p class="text-sm text-justify md:text-2xl">{{this.nota.descripcion}}</p>
+                </div>
+                <div class="w-full h-fit flex items-center px-8 mb-2">
+                    <h3 class="text-sm font-bold text-blue-500 md:text-2xl">Fecha de Finalizacion: <span class="text-black font-light">{{this.nota.fecha}}</span></h3>
+                </div>
+    
+                <div class="flex flex-col items-center space-y-4">
+                    <!-- Botón para cargar imágenes -->
+                    <button
+                      (click)="fileInput.click()"
+                      class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 md:text-2xl"
+                    >
+                      Cargar Imágenes
+                    </button>
+                    <input
+                      #fileInput
+                      type="file"
+                      multiple
+                      accept="image/*"
+                      (change)="onFileSelected($event)"
+                      class="hidden"
+                    />
+                  
+                    <!-- Contenedor Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full max-w-6xl p-4">
+                        @for (image of images; track $index) {
+                            <div class="border border-gray-200 rounded overflow-hidden shadow-sm">
+                                <img [src]="image" alt="Imagen cargada" class="w-full h-40 object-cover" />
+                            </div>
+                        }
+                    </div>
+                  </div>
+            </div>
+
+              <div class="w-full h-fit flex justify-center items-center pb-4">
+                <button (click)="this.terminarTarea()" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 md:text-2xl">Terminar Tarea</button>
+             </div>
+       </div>
+       
+
+    </div>
+    <app-optionbar [compConfig]="{page: 'notes'}"></app-optionbar>
+</div>
