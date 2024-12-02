@@ -10,6 +10,8 @@ export class NotesService {
 
   constructor(@Inject(PLATFORM_ID) private platformId: any) { }
 
+  // Notas
+
   guardarNotasStorage():void{
     if(isPlatformBrowser(this.platformId)){
       localStorage.setItem('notas', JSON.stringify(NotesService.notas));
@@ -33,4 +35,5 @@ export class NotesService {
   eliminarNota(idF:Number):void{
     NotesService.notas = NotesService.notas.filter((e:any) => e.id !== idF);
   }
+
 }

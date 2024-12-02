@@ -28,6 +28,7 @@ export class NotesCreateComponent{
   agregarNota():void{
     let nuevaNota = this.formulario().value;
     nuevaNota.id = this.notesService.agregarId();
+    nuevaNota.images = [];
     if(nuevaNota.nombre && nuevaNota.descripcion && nuevaNota.fecha){
       NotesService.notas.push(nuevaNota);
       if(isPlatformBrowser(this.platformId)){

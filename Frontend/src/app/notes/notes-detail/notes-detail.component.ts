@@ -26,6 +26,7 @@ export class NotesDetailComponent implements OnInit{
 
   ngOnInit(): void {
     this.loadPage();
+    console.log(NotesService.notas)
   }
 
   loadPage():void{
@@ -33,7 +34,7 @@ export class NotesDetailComponent implements OnInit{
     NotesService.notas.forEach((e: any) => {
       if(e.id == this.id){
         this.nota = e;
-        console.log(this.nota);
+        this.images = this.nota.images;
       }
     });
   }
@@ -45,6 +46,11 @@ export class NotesDetailComponent implements OnInit{
         const reader = new FileReader();
         reader.onload = (e: any) => {
           this.images.push(e.target.result); // Agrega la imagen como base64
+          NotesService.notas.forEach((e:any) => {
+            if(e.id == this.id){
+              e.images = this.images;
+            }
+          });
         };
         reader.readAsDataURL(file); // Convierte el archivo a base64
       });

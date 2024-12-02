@@ -11,12 +11,12 @@ export const routes: Routes = [
         loadChildren: () => import('./notes/notes.routes').then(m => m.NOTES_ROUTES)
     },
     {
-        path: 'climate',
-        loadChildren: () => import('./climate/climate.routes').then(m => m.CLIMATE_ROUTES)
+        path: 'pomodoro',
+        loadChildren: () => import('./pomodoro/pomodoro.routes').then(m => m.CLIMATE_ROUTES)
     },
     {
-        path: 'clock',
-        loadChildren: () => import('./clock/clock.routes').then(m => m.CLOCK_ROUTES)
+        path: 'diary',
+        loadChildren: () => import('./diary/diary.routes').then(m => m.DIARY_ROUTES)
     },
     {
         path: 'pet',

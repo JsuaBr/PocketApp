@@ -1,0 +1,63 @@
+<div class="w-full h-full flex flex-col justify-between lg:flex-row-reverse lg:items-center lg:justify-normal">
+    <div class="w-full h-[85%] flex flex-col md:items-stretch">
+        <app-diary-heading></app-diary-heading>
+        <div class="w-full px-6 py-4 overflow-x-auto md:flex md:justify-center">
+            <form [formGroup]="formulario()" class="w-full h-fit flex flex-col bg-zinc-300 shadow-md rounded-2xl px-4 py-4 items-center md:w-1/2" action="POST">
+
+                <!-- Icono -->
+                <div class="w-full flex justify-center items-center p-4">
+                    <svg class="w-16 h-16" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
+                    <path fill="000" d="M284.257 275.686a15.18 15.18 0 0 1-1.798.115c-4.457.039-10.658-2.136-15.5-4.426a83.096 83.096 0 0 1-6.07-3.139c-.332-.185-.502-.293-.779-.455v-10.682c7.033-1.411 12.478-6.292 16.288-12.014 4.534-6.803-3.402-13.604-20.406-13.604-16.99 0-24.925 6.802-20.398 13.604 4.072 6.108 9.994 11.266 17.714 12.254v10.45a82.96 82.96 0 0 1-8.714 4.426c-4.473 1.966-9.732 3.617-13.62 3.586-.624 0-1.241-.047-1.796-.115a3.389 3.389 0 0 0-3.833 2.907 3.387 3.387 0 0 0 2.908 3.818c.887.123 1.789.192 2.722.192 6.378-.038 13.056-2.614 18.37-5.067a88.65 88.65 0 0 0 7.365-3.871 88.345 88.345 0 0 0 7.365 3.871c5.329 2.453 12 5.028 18.385 5.067.918 0 1.836-.069 2.707-.192 1.859-.246 3.178-1.959 2.908-3.818a3.38 3.38 0 0 0-3.818-2.907zM208.124 202.359c-6.316 0-11.43 5.128-11.43 11.43 0 6.316 5.114 11.444 11.43 11.444 6.308 0 11.429-5.128 11.429-11.444 0-6.301-5.121-11.43-11.429-11.43z"/><path class="st0" d="M255.992 24.274C114.608 24.274 0 138.89 0 280.282c0 85.372 41.829 160.934 106.071 207.438 19.056-27.347 15.008-179.089 25.45-247.54.586-3.825 1.311-7.481 2.098-11.044-45.74-17.768-33.501-68.706-13.064-81.354 24.786-15.339 41.128-3.293 49.996 14.506 27.686-24.833 63.023-31.033 85.442-31.033 22.434 0 57.77 6.2 85.449 31.033 8.876-17.799 25.203-29.846 49.989-14.506 20.452 12.647 32.683 63.585-13.049 81.354a171.791 171.791 0 0 1 2.083 11.044c10.457 68.451 6.393 220.208 25.457 247.547C470.162 441.216 512 365.653 512 280.282 512 138.89 397.376 24.274 255.992 24.274z"/><path class="st0" d="M303.876 202.359c-6.324 0-11.445 5.128-11.445 11.43 0 6.316 5.122 11.444 11.445 11.444 6.3 0 11.429-5.128 11.429-11.444 0-6.301-5.129-11.43-11.429-11.43z"/></svg>
+                </div>
+                <!-- Fin icono -->
+
+                <!-- inputs -->
+                <div class="w-full h-full bg-white rounded-lg py-4 shadow-md">
+                    <h2 class="px-2 text-lg font-semibold">Nombre de la nota</h2>
+                    <input class="w-full bg-white outline-none p-2" type="text" id="nombre" name="nombre" formControlName="nombre" required>
+                </div>
+                <div class="w-full h-fit bg-white rounded-lg py-4 mt-4 shadow-md">
+                    <h2 class="px-2 text-lg font-semibold">Descripcion de la nota</h2>
+                    <textarea class="w-full bg-white outline-none p-2 resize-none" id="descripcion" name="descripcion" formControlName="descripcion" required></textarea>
+                </div>
+                
+                <!-- Faces icons -->
+                <div class="w-full h-fit bg-white rounded-lg py-4 mt-4 shadow-md">
+                    <h2 class="px-2 text-lg font-semibold">Estado de ánimo</h2>
+                    <div class="flex justify-around items-center mt-4">
+                      <!-- Carita feliz -->
+                      <label class="flex flex-col items-center">
+                        <input type="radio" name="estadoAnimo" value="Feliz" class="hidden" (change)="seleccionarEstado('Feliz')" />
+                        <svg class="w-16 h-16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 12a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Zm1.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0ZM9.375 10.5a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Zm6.375-1.125a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 15c-1.822 0-3-1.155-3-2.25H7.5c0 2.219 2.18 3.75 4.5 3.75s4.5-1.531 4.5-3.75H15c0 1.095-1.178 2.25-3 2.25Z" fill="#080341"/></svg>
+                        <span class="text-sm text-gray-700 mt-1">Feliz</span>
+                      </label>
+                
+                      <!-- Carita neutral -->
+                      <label class="flex flex-col items-center">
+                        <input type="radio" name="estadoAnimo" value="Neutral" class="hidden" (change)="seleccionarEstado('Neutral')" />
+                        <svg class="w-14 h-14" viewBox="0 0 16 16" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><ellipse cx="6" cy="5.5" rx="1" ry="1.5"/><ellipse cx="10" cy="5.5" rx="1" ry="1.5"/><path d="M3 9h10v1H3z"/><path d="M8 1a7 7 0 1 1-7 7 7.008 7.008 0 0 1 7-7m0-1a8 8 0 1 0 8 8 8 8 0 0 0-8-8Z"/></svg>
+                        <span class="text-sm text-gray-700 mt-1">Neutral</span>
+                      </label>
+                
+                      <!-- Carita triste -->
+                      <label class="flex flex-col items-center">
+                        <input type="radio" name="estadoAnimo" value="Triste" class="hidden" (change)="seleccionarEstado('Triste')" />
+                        <svg class="w-14 h-14" viewBox="0 0 16 16" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"><ellipse cx="6" cy="5.5" rx="1" ry="1.5"/><ellipse cx="10" cy="5.5" rx="1" ry="1.5"/><path d="M12.143 12.071H11a2.929 2.929 0 0 0-5.857 0H4a4.072 4.072 0 0 1 8.143 0Z"/><path d="M8 1a7 7 0 1 1-7 7 7.008 7.008 0 0 1 7-7m0-1a8 8 0 1 0 8 8 8 8 0 0 0-8-8Z"/></svg>
+                        <span class="text-sm text-gray-700 mt-1">Triste</span>
+                      </label>
+                    </div>
+                  </div>
+                <!-- Fin Faces Icons -->
+
+                <button (click)="agregarNota()" class="w-fit px-6 py-2 bg-white rounded-full shadow-md mt-4">
+                    <h2 class="font-bold text-lg">Crear</h2>
+                </button>
+                <!-- fin inputs -->
+                
+            </form>
+        </div>
+
+
+    </div>
+    <app-optionbar [compConfig]="{page: 'diary'}"></app-optionbar>
+</div>

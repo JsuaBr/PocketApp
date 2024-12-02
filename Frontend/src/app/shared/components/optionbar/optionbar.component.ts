@@ -32,12 +32,12 @@ loadPageSelection():void{
       notes?.classList.add('selected');
     break;
 
-    case 'climate':
-      const climate = this.document.getElementById('climate');
+    case 'pomodoro':
+      const climate = this.document.getElementById('pomodoro');
       climate?.classList.add('selected');
     break;
 
-    case 'clock':
+    case 'diary':
       const clock = this.document.getElementById('clock');
       clock?.classList.add('selected');
     break;
